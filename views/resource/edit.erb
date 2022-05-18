@@ -1,0 +1,16 @@
+<h1>Edit Resource</h1>
+
+<form action="/resource/<%= resource['id'] %>" method="POST">
+    <input type="hidden" name="_method" value="put">
+   
+    <label for="">Name: </label>
+    <input type="text" name = "name" value ="<%= resource['name'] %>">
+
+    <label for="">Description: </label>
+    <input type="text" name = "description" value ="<%= resource['description'] %>">
+
+    <label for="">URL: </label>
+    <input type="text" name = "url" value ="<%= resource['url'] %>">
+
+    <button>Update resource</button>
+</form>
