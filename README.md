@@ -1,22 +1,27 @@
-coding resources app
+Coding Resources App
+
+Project Summary:
+
+Full-stack database backed application for coding resources to assist costudents with learning
 
 As we start this course I have noticed that people know about so many resources that could be beneficial to many people learning about coding.
 
 so why not store them in one place and we can keep growing it throughout the course
 
-Day 1
-start - user login with password and password digest
+Step 1
+Start - Create user login with email, password and password digest
 if logged in show logged in as user
 
-develop idea
+Create database
+create resource table with resource name, description, languages, url
+create user table with user, email, password digest
+create recommendations table (likes table)
 
-what things should be in the resource
-user, email, password
-resource, languages used, difficulty,  description, url, recommended resource
-table for recommendations
+wire framework
 
-extra possible features
-drop down list for languages
+Add functionality
+drop down list for language selection
 sort by languages
 
+Add
 
