@@ -14,8 +14,15 @@ post '/resource' do
   name = params['name']
   description = params['description']
   url = params['url']
-    
-  create_resource(name, description, url)
+  html = params['html']
+  css = params['css']
+  javascript = params['javascript']
+  ruby = params['ruby']
+  ruby_on_rails = params['ruby_on_rails']
+  postgresql = params['postgresql']
+  python = params['python']
+
+  create_resource(name, description, url, html, css, javascript, ruby, ruby_on_rails, postgresql, python)
 
   redirect '/'
 end
@@ -35,8 +42,15 @@ put '/resource/:id' do
   name = params['name']
   description = params['description']
   url = params['url']
+  html = params['html']
+  css = params['css']
+  javascript = params['javascript']
+  ruby = params['ruby']
+  ruby_on_rails = params['ruby_on_rails']
+  postgresql = params['postgresql']
+  python = params['python']
 
-  update_resource(name, description, url, id)
+  update_resource(name, description, url, html, css, javascript, ruby, ruby_on_rails, postgresql, python, id)
 
   redirect '/'
 end
