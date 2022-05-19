@@ -22,6 +22,7 @@ create recommendations table (likes table)
 wire framework
 
 Add functionality
+make functional on a variety of screens
 drop down list for language selection
 sort by languages
 Login fail

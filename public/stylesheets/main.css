@@ -1,5 +1,77 @@
 body {
-  background-image: linear-gradient(to bottom right, rgb(136, 215, 241), rgb(190, 45, 234));
+  background-image: linear-gradient(to bottom right, rgb(136, 215, 241), rgb(190, 45, 234));  
+}
+/* 
+margin: 0;
+overflow: hidden;
+transform-origin: right;
+transform: translate(-100vw, 0) rotate(180deg);
+writing-mode: vertical-rl; */
+
+/* transform: rotateY(180deg);
+} */
+
+
+.page {
+  width: 100%;
+  position: relative;
+  /* top: 50px; */
+}
+
+
+#img1 {
+  transition: transform 4s;
+}
+
+#img1:hover {
+  transform: rotate(720deg);
+}
+
+#img2 {
+  transition: transform 2s;
+}
+
+#img2:hover {
+  transform: rotate(720deg);
+}
+
+#img3 {
+  transition: width 2s, height 4s;
+}
+
+#img3:hover {
+  width: 300px;
+  height: 300px;
+}
+
+#img4 {
+  position: relative;
+}
+
+/* #img4:hover {
+  top: 50px;
+} */
+
+#img5 {
+  transition: transform 2s;
+}
+
+#img5:hover {
+  transform: skew(30deg,30deg);;
+}
+
+#img6 {
+  transition: transform 2s;
+}
+
+#img6:hover{ transform: translate(400px, 80px);}
+
+#img7 {
+  transition: all 2.0s ease;;
+}
+
+#img7:hover {
+  opacity: 10%;
 }
 
 .main{
