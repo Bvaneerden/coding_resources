@@ -12,39 +12,42 @@
 
           <% all_resources.each do |resource| %>
               <article class="resource_item">
-                  <h2><a href="<%="#{resource['url']}"%>"><%= resource['name'] %></a></h2>
+                  <h2><a href="<%="#{resource['url']}"%>" target="_blank"><%= resource['name'] %></a></h2>
+
                   <h3><%="#{resource['description']}"%></h3>
 
                   <div class="all_lang">
-                  <% if resource['html'] %>
+                  <% if resource['html'] == 't' %>
                   <img class='small' src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" alt="HTML5 Logo">       
                   <% end %>
-                  <% if resource['css'] %>
+                  <% if resource['css'] == 't' %>
                   <img class='small' src="https://png.pngitem.com/pimgs/s/198-1985002_css3-logo-hd-png-download.png" alt="CSS Logo">
                   <% end %>
-                  <% if resource['javascript'] %>
+                  <% if resource['javascript'] == 't' %>
                   <img class='small' src="https://png.pngitem.com/pimgs/s/116-1167737_logo-javascript-pattern-copyright-framework-free-download-javascript.png" alt="JS Logo">
                   <% end %>
-                  <% if resource['ruby'] %>
+                  <% if resource['ruby'] == 't' %>
                   <img class='small' src="https://png.pngitem.com/pimgs/s/12-120179_best-free-ruby-png-ruby-programming-language-logo.png" alt="Ruby Logo">
                   <% end %>
-                  <% if resource['ruby_on_rails'] %>
+                  <% if resource['ruby_on_rails'] == 't' %>
                   <img class='small' src="https://png.pngitem.com/pimgs/s/360-3600482_ruby-on-rails-logo-ruby-on-rails-logo.png" alt="Ruby on RailsLogo">
                   <% end %>
-                  <% if resource['postgresql'] %>
+                  <% if resource['postgresql'] == 't' %>
                   <img class='small' src="https://png.pngitem.com/pimgs/s/151-1512647_postgresql-elephant-logo-postgresql-logo-vector-hd-png.png" alt="Postgresql Logo">
                   <% end %>
-                  <% if resource['python'] %>
+                  <% if resource['python'] == 't' %>
                   <img class='small' src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" alt="Python Logo">
                   <% end %>
                   </div>
-                  
-                  <a href="/resource/<%=resource['id']%>/edit">Edit</a>
+                                    <div class="changes">
+                   <a href="/resource/<%=resource['id']%>/edit">Edit</a>
 
               <form onsubmit="return confirm('Are you sure you want to delete this resource?');" action="/resource/<%= resource['id'] %>" method="POST">
               <input type="hidden" name="_method" value="delete">
 
               <button>Delete</button>
+              </div>
+                  
               </form>
 
               </article>
