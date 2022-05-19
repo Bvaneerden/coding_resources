@@ -1,101 +1,100 @@
 <div class="main">
-<% if logged_in? %>
-  <h2>You are logged in. Welcome <%= current_user['name'] %> Yoda veloper</h2>
-    <form action="/sessions" method="POST">
-      <input type="hidden" name="_method" value="delete">
-      
-      <button> logout</button>
-  </form>
+  <% if logged_in? %>
+    <h2>You are logged in. Welcome <%= current_user['name'] %> Yoda veloper</h2>
+      <form action="/sessions" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        
+        <button> logout</button>
+    </form>
 
-    <a href="/resource/new">Add new resource</a>
-    <section class="all_resources">
+      <a href="/resource/new">Add new resource</a>
+      <section class="all_resources">
 
-        <% all_resources.each do |resource| %>
-            <article class="resource_item">
-                <h2><%= resource['name'] %></h2>
-                <h3><%="#{resource['description']}"%></h3>
-                <h3><%="#{resource['url']}"%></h3>
-                
-                <% if resource['html'] %>
-                <img src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" alt="HTML5 Logo">       
-                <% end %>
-                <% if resource['css'] %>
-                <img src="https://png.pngitem.com/pimgs/s/198-1985002_css3-logo-hd-png-download.png" alt="CSS Logo">
-                <% end %>
-                <% if resource['javascript'] %>
-                <img src="https://png.pngitem.com/pimgs/s/116-1167737_logo-javascript-pattern-copyright-framework-free-download-javascript.png" alt="JS Logo">
-                <% end %>
-                <% if resource['ruby'] %>
-                <img src="https://png.pngitem.com/pimgs/s/12-120179_best-free-ruby-png-ruby-programming-language-logo.png" alt="Ruby Logo">
-                <% end %>
-                <% if resource['ruby_on_rails'] %>
-                <img src="https://png.pngitem.com/pimgs/s/360-3600482_ruby-on-rails-logo-ruby-on-rails-logo.png" alt="Ruby on RailsLogo">
-                <% end %>
-                <% if resource['postgresql'] %>
-                <img src="https://png.pngitem.com/pimgs/s/151-1512647_postgresql-elephant-logo-postgresql-logo-vector-hd-png.png" alt="Postgresql Logo">
-                <% end %>
-                <% if resource['python'] %>
-                <img src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" alt="Python Logo">
-                <% end %>
+          <% all_resources.each do |resource| %>
+              <article class="resource_item">
+                  <h2><a href="<%="#{resource['url']}"%>"><%= resource['name'] %></a></h2>
+                  <h3><%="#{resource['description']}"%></h3>
                   
+                  <% if resource['html'] %>
+                  <img src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" alt="HTML5 Logo">       
+                  <% end %>
+                  <% if resource['css'] %>
+                  <img src="https://png.pngitem.com/pimgs/s/198-1985002_css3-logo-hd-png-download.png" alt="CSS Logo">
+                  <% end %>
+                  <% if resource['javascript'] %>
+                  <img src="https://png.pngitem.com/pimgs/s/116-1167737_logo-javascript-pattern-copyright-framework-free-download-javascript.png" alt="JS Logo">
+                  <% end %>
+                  <% if resource['ruby'] %>
+                  <img src="https://png.pngitem.com/pimgs/s/12-120179_best-free-ruby-png-ruby-programming-language-logo.png" alt="Ruby Logo">
+                  <% end %>
+                  <% if resource['ruby_on_rails'] %>
+                  <img src="https://png.pngitem.com/pimgs/s/360-3600482_ruby-on-rails-logo-ruby-on-rails-logo.png" alt="Ruby on RailsLogo">
+                  <% end %>
+                  <% if resource['postgresql'] %>
+                  <img src="https://png.pngitem.com/pimgs/s/151-1512647_postgresql-elephant-logo-postgresql-logo-vector-hd-png.png" alt="Postgresql Logo">
+                  <% end %>
+                  <% if resource['python'] %>
+                  <img src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" alt="Python Logo">
+                  <% end %>
+                    
 
-                <h3><%="#{resource['html']}"%></h3>
-                
-                <a href="/resource/<%=resource['id']%>/edit">Edit</a>
+                  <h3><%="#{resource['html']}"%></h3>
+                  
+                  <a href="/resource/<%=resource['id']%>/edit">Edit</a>
 
-            <form onsubmit="return confirm('Are you sure you want to delete this resource?');" action="/resource/<%= resource['id'] %>" method="POST">
-            <input type="hidden" name="_method" value="delete">
+              <form onsubmit="return confirm('Are you sure you want to delete this resource?');" action="/resource/<%= resource['id'] %>" method="POST">
+              <input type="hidden" name="_method" value="delete">
 
-            <button>Delete</button>
-            </form>
+              <button>Delete</button>
+              </form>
 
-            </article>
-        <% end %>
-    </section>
-
-
-
-
-    <% else %>
-    <h1>SEI53 Coding Resources</h1>
-    <h1>Please Login or Sign up</h1>
-    <a href="/sign_up">Sign Up</a>
-    <a href="/login">Login</a>
-    <div class="index_img">
+              </article>
+          <% end %>
+      </section>
 
 
 
-      <div class="ind_img">
-        <img src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" alt="HTML5 Logo">
-      </div>
 
-      <div class="ind_img">
-        <img src="https://png.pngitem.com/pimgs/s/198-1985002_css3-logo-hd-png-download.png" alt="CSS Logo">
-      </div>
+      <% else %>
+      <h1>SEI53 Coding Resources</h1>
+      <h1>Please <a href="/login">Login</a> or <a href="/sign_up">Sign Up</a></h1>
       
-      <div class="ind_img">
-        <img src="https://png.pngitem.com/pimgs/s/116-1167737_logo-javascript-pattern-copyright-framework-free-download-javascript.png" alt="JS Logo">
-      </div>
       
-      <div class="ind_img">
-        <img src="https://png.pngitem.com/pimgs/s/12-120179_best-free-ruby-png-ruby-programming-language-logo.png" alt="Ruby Logo">
-      </div>
-      
-      <div class="ind_img">
-        <img src="https://png.pngitem.com/pimgs/s/360-3600482_ruby-on-rails-logo-ruby-on-rails-logo.png" alt="Ruby on RailsLogo">
-      </div>
-      
-      <div class="ind_img">
-        <img src="https://png.pngitem.com/pimgs/s/151-1512647_postgresql-elephant-logo-postgresql-logo-vector-hd-png.png" alt="Postgresql Logo">
-      </div>
-      
-      <div class="ind_img">
-        <img src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" alt="Python Logo">
-      </div>
-    
-    
-    </div>
+      <div class="index_img">
 
-    
-<% end %>
+
+
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" alt="HTML5 Logo">
+        </div>
+
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/198-1985002_css3-logo-hd-png-download.png" alt="CSS Logo">
+        </div>
+        
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/116-1167737_logo-javascript-pattern-copyright-framework-free-download-javascript.png" alt="JS Logo">
+        </div>
+        
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/12-120179_best-free-ruby-png-ruby-programming-language-logo.png" alt="Ruby Logo">
+        </div>
+        
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/360-3600482_ruby-on-rails-logo-ruby-on-rails-logo.png" alt="Ruby on RailsLogo">
+        </div>
+        
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/151-1512647_postgresql-elephant-logo-postgresql-logo-vector-hd-png.png" alt="Postgresql Logo">
+        </div>
+        
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" alt="Python Logo">
+        </div>
+      
+      
+      </div>
+
+      
+  <% end %>
 </div>
