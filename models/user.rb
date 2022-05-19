@@ -10,7 +10,7 @@ def find_user_by_email(email)
   if users.to_a.count > 0
     users[0]
   else 
-    nil
+    redirect '/not_found'
   end
 end
 

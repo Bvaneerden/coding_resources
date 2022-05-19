@@ -1,3 +1,4 @@
+<div class="main">
 <% if logged_in? %>
   <h2>You are logged in. Welcome <%= current_user['name'] %> Yoda veloper</h2>
     <form action="/sessions" method="POST">
@@ -56,6 +57,7 @@
 
 
     <% else %>
+    <h1>SEI53 Coding Resources</h1>
     <h1>Please Login or Sign up</h1>
     <a href="/sign_up">Sign Up</a>
     <a href="/login">Login</a>
@@ -96,3 +98,4 @@
 
     
 <% end %>
+</div>

@@ -12,3 +12,7 @@ post '/create_user' do
   redirect '/'
   
 end
+
+get '/not_found' do
+  erb :'users/not_found'
+end

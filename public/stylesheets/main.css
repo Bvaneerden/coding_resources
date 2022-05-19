@@ -2,6 +2,17 @@ body {
   background-color: lightblue;
 }
 
+.main{
+  text-align: center;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+
+h1 { 
+  text-align: center;
+}
+
 .all_resources {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
