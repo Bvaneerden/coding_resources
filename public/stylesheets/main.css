@@ -1,0 +1,35 @@
+body {
+  background-color: lightblue;
+}
+
+.all_resources {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.resource_item img {
+  width: 100%;
+}
+
+.index_img{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.ind_img img {
+  width: 100%;
+}
+
+.language_img {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.language_img_ind {
+  width: 100%;
+}
+
+.checkbox {
+  width: 100%;
+}

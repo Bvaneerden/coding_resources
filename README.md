@@ -1,5 +1,7 @@
 Coding Resources App
 
+Link: https://coding-resources-sei53.herokuapp.com/
+
 Project Summary:
 
 Full-stack database backed application for coding resources to assist costudents with learning
@@ -22,6 +24,4 @@ wire framework
 Add functionality
 drop down list for language selection
 sort by languages
-
-Add
 
