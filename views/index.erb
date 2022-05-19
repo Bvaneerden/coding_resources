@@ -4,7 +4,7 @@
       <form action="/sessions" method="POST">
         <input type="hidden" name="_method" value="delete">
         
-        <button> logout</button>
+        <button>BRB</button>
     </form>
 
       <a href="/resource/new">Add new resource</a>
@@ -14,31 +14,30 @@
               <article class="resource_item">
                   <h2><a href="<%="#{resource['url']}"%>"><%= resource['name'] %></a></h2>
                   <h3><%="#{resource['description']}"%></h3>
-                  
+
+                  <div class="all_lang">
                   <% if resource['html'] %>
-                  <img src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" alt="HTML5 Logo">       
+                  <img class='small' src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" alt="HTML5 Logo">       
                   <% end %>
                   <% if resource['css'] %>
-                  <img src="https://png.pngitem.com/pimgs/s/198-1985002_css3-logo-hd-png-download.png" alt="CSS Logo">
+                  <img class='small' src="https://png.pngitem.com/pimgs/s/198-1985002_css3-logo-hd-png-download.png" alt="CSS Logo">
                   <% end %>
                   <% if resource['javascript'] %>
-                  <img src="https://png.pngitem.com/pimgs/s/116-1167737_logo-javascript-pattern-copyright-framework-free-download-javascript.png" alt="JS Logo">
+                  <img class='small' src="https://png.pngitem.com/pimgs/s/116-1167737_logo-javascript-pattern-copyright-framework-free-download-javascript.png" alt="JS Logo">
                   <% end %>
                   <% if resource['ruby'] %>
-                  <img src="https://png.pngitem.com/pimgs/s/12-120179_best-free-ruby-png-ruby-programming-language-logo.png" alt="Ruby Logo">
+                  <img class='small' src="https://png.pngitem.com/pimgs/s/12-120179_best-free-ruby-png-ruby-programming-language-logo.png" alt="Ruby Logo">
                   <% end %>
                   <% if resource['ruby_on_rails'] %>
-                  <img src="https://png.pngitem.com/pimgs/s/360-3600482_ruby-on-rails-logo-ruby-on-rails-logo.png" alt="Ruby on RailsLogo">
+                  <img class='small' src="https://png.pngitem.com/pimgs/s/360-3600482_ruby-on-rails-logo-ruby-on-rails-logo.png" alt="Ruby on RailsLogo">
                   <% end %>
                   <% if resource['postgresql'] %>
-                  <img src="https://png.pngitem.com/pimgs/s/151-1512647_postgresql-elephant-logo-postgresql-logo-vector-hd-png.png" alt="Postgresql Logo">
+                  <img class='small' src="https://png.pngitem.com/pimgs/s/151-1512647_postgresql-elephant-logo-postgresql-logo-vector-hd-png.png" alt="Postgresql Logo">
                   <% end %>
                   <% if resource['python'] %>
-                  <img src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" alt="Python Logo">
+                  <img class='small' src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" alt="Python Logo">
                   <% end %>
-                    
-
-                  <h3><%="#{resource['html']}"%></h3>
+                  </div>
                   
                   <a href="/resource/<%=resource['id']%>/edit">Edit</a>
 

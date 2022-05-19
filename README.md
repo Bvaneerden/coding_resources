@@ -26,3 +26,6 @@ drop down list for language selection
 sort by languages
 Login fail
 
+
+Known Bugs
+checked boxes blank when editing

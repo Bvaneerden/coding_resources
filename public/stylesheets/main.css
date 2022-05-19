@@ -1,5 +1,5 @@
 body {
-  background-color: lightblue;
+  background-image: linear-gradient(to bottom right, rgb(136, 215, 241), rgb(190, 45, 234));
 }
 
 .main{
@@ -15,7 +15,15 @@ h1 {
 
 .all_resources {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.all_lang {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 1em;
+  margin: 0 auto;
 }
 
 .resource_item img {
@@ -34,7 +42,7 @@ h1 {
 
 .language_img {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px;
 }
 
