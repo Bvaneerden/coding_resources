@@ -80,7 +80,6 @@ writing-mode: vertical-rl; */
   max-width: 960px;
 }
 
-
 h1 { 
   text-align: center;
 }
@@ -126,8 +125,14 @@ h1 {
   width: 100%;
 }
 
-.changes{
+.changes {
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
+}
+
+#cant_touch_this {
+  position: relative;
+  border: 10px solid transparent;
+  /* border-radius: 10px; */
 }

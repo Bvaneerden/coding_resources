@@ -12,6 +12,8 @@ post '/sessions' do
     # log user in
     session['user_id'] = user['id']
     redirect '/'
+  else
+    redirect '/not_found'
   end
 end
 
