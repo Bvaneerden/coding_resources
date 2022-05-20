@@ -126,27 +126,15 @@ h1 {
   color: black
 }
 
-
 .carousel_container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
 .carousel-inner img {
-  /* max-height: 80px;
-  padding: 25px; */
   margin: 0 auto;
 }
 
-.carousel-inner {
-  /* margin-top: -25px; */
+.d-block {
+  max-height: 80px;
 }
-
-.carousel-item {
-  max-height: 50px;
-}
-
-/* .actions{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-} */

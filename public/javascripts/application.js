@@ -13,3 +13,12 @@ if (document.getElementById("cant_touch_this") != null) {
   document.getElementById("cant_touch_this").style.bottom = "" + (Number(Math.random() * (1 - 400) + 1)) + "px",
   document.getElementById("cant_touch_this").style.left = "" + Number(Math.random() * (1 - 460) + 1) + "px";
 })}
+
+
+// document.querySelector('.carousel_container').addEventListener('slide.bs.carousel', function (event) {
+//   redirect '/'
+//   console.log("meow")  
+// })
+
+// coding_language_index = coding_language_index + 1;
+// console.log(coding_language_index)

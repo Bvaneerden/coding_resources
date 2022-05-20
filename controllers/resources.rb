@@ -63,3 +63,13 @@ delete '/resource/:id' do
 
   redirect '/'
 end
+
+get '/resource/sort' do
+  # languages = ["html"]
+
+  # sort_resources(language)
+  erb :'users/not_found'
+  # redirect '/users/not_found'
+
+end
+
