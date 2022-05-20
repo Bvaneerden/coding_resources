@@ -18,5 +18,9 @@ def delete_resource(id)
   run_sql("DELETE FROM resources WHERE id = $1", [id])
 end
 
+def sort_resources(language)
+  run_sql("SELECT * FROM resources WHERE language = $1", [language])
+end
+
 
 # UPDATE resources SET html = true WHERE id = 5;

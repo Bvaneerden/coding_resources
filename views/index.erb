@@ -2,71 +2,96 @@
   <h1>SEI53 Coding Resource App</h1>
   <% if logged_in? %>
     <h2>You are logged in. Welcome <%= current_user['name'] %> Yoda veloper</h2>
-      <form action="/sessions" method="POST">
-        <input type="hidden" name="_method" value="delete">
-        
-        <button>BRB</button>
-    </form>
+    <div class="actions"></div>
+    <div class="carousel_container">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" class="d-block w-50" alt="...">
+          </div>
 
-      <a href="/resource/new">Add new resource</a>
-      <section class="all_resources">
+          <div class="carousel-item">
+            <img src="https://png.pngitem.com/pimgs/s/198-1985002_css3-logo-hd-png-download.png" class="d-block w-50" alt="...">
+          </div>
+          
+          <div class="carousel-item">
+            <img src="https://png.pngitem.com/pimgs/s/116-1167737_logo-javascript-pattern-copyright-framework-free-download-javascript.png" class="d-block w-50" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
 
-          <% all_resources.each do |resource| %>
-              <article class="resource_item">
-                  <h2><a href="<%="#{resource['url']}"%>" target="_blank"><%= resource['name'] %></a></h2>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
-                  <h3><%="#{resource['description']}"%></h3>
+      <%# <div class="other_buttons"> %>
+        <form action="/sessions" method="POST">
+          <input type="hidden" name="_method" value="delete">        
+          <button>BRB</button>
+        </form>
 
-                  <div class="all_lang">
-                  <% if resource['html'] == 't' %>
-                  <img class='small' src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" alt="HTML5 Logo">       
-                  <% end %>
-                  <% if resource['css'] == 't' %>
-                  <img class='small' src="https://png.pngitem.com/pimgs/s/198-1985002_css3-logo-hd-png-download.png" alt="CSS Logo">
-                  <% end %>
-                  <% if resource['javascript'] == 't' %>
-                  <img class='small' src="https://png.pngitem.com/pimgs/s/116-1167737_logo-javascript-pattern-copyright-framework-free-download-javascript.png" alt="JS Logo">
-                  <% end %>
-                  <% if resource['ruby'] == 't' %>
-                  <img class='small' src="https://png.pngitem.com/pimgs/s/12-120179_best-free-ruby-png-ruby-programming-language-logo.png" alt="Ruby Logo">
-                  <% end %>
-                  <% if resource['ruby_on_rails'] == 't' %>
-                  <img class='small' src="https://png.pngitem.com/pimgs/s/360-3600482_ruby-on-rails-logo-ruby-on-rails-logo.png" alt="Ruby on RailsLogo">
-                  <% end %>
-                  <% if resource['postgresql'] == 't' %>
-                  <img class='small' src="https://png.pngitem.com/pimgs/s/151-1512647_postgresql-elephant-logo-postgresql-logo-vector-hd-png.png" alt="Postgresql Logo">
-                  <% end %>
-                  <% if resource['python'] == 't' %>
-                  <img class='small' src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" alt="Python Logo">
-                  <% end %>
-                  </div>
-                                    <div class="changes">
-                   <a href="/resource/<%=resource['id']%>/edit">Edit</a>
+        <a href="/resource/new">Add new resource</a>
+      <%# </div> %>
 
-              <form onsubmit="return confirm('Are you sure you want to delete this resource?');" action="/resource/<%= resource['id'] %>" method="POST">
+    </div>
+
+
+
+    <section class="all_resources">
+      <% all_resources.each do |resource| %>
+        <article class="resource_item">
+          <h2><a href="<%="#{resource['url']}"%>" target="_blank"><%= resource['name'] %></a></h2>
+          
+          <h3><%="#{resource['description']}"%></h3>
+
+          <div class="all_lang">
+            <% if resource['html'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" alt="HTML5 Logo">       
+            <% end %>
+            <% if resource['css'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/198-1985002_css3-logo-hd-png-download.png" alt="CSS Logo">
+            <% end %>
+            <% if resource['javascript'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/116-1167737_logo-javascript-pattern-copyright-framework-free-download-javascript.png" alt="JS Logo">
+            <% end %>
+            <% if resource['ruby'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/12-120179_best-free-ruby-png-ruby-programming-language-logo.png" alt="Ruby Logo">
+            <% end %>
+            <% if resource['ruby_on_rails'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/360-3600482_ruby-on-rails-logo-ruby-on-rails-logo.png" alt="Ruby on RailsLogo">
+            <% end %>
+            <% if resource['postgresql'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/151-1512647_postgresql-elephant-logo-postgresql-logo-vector-hd-png.png" alt="Postgresql Logo">
+            <% end %>
+            <% if resource['python'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" alt="Python Logo">
+            <% end %>
+          </div>
+          
+          <div class="changes">
+            <a href="/resource/<%=resource['id']%>/edit">Edit</a>
+
+            <form onsubmit="return confirm('Are you sure you want to delete this resource?');" action="/resource/<%= resource['id'] %>" method="POST">
               <input type="hidden" name="_method" value="delete">
 
-              <button>Delete</button>
-              </div>
-                  
-              </form>
+              <button>Delete</button>             
+            </form>
+          </div>
 
-              </article>
-          <% end %>
-      </section>
+        </article>
+      <% end %>
+    </section>
 
-
-
-
-      <% else %>
-      <div class="page">
-      
+  <% else %>
+    <div class="page">
       <h1>Please <a href="/login">Login</a> or <a href="/sign_up">Sign Up</a></h1>
-      
-      
+        
       <div class="index_img">
-
-
 
         <div class="ind_img">
           <img src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" alt="HTML5 Logo" id="img1"> 
@@ -95,10 +120,12 @@
         <div class="ind_img">
           <img src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" alt="Python Logo" id="img7">
         </div>
-       
-      
+            
       </div>
 
-      </div>
+    </div>
   <% end %>
 </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
