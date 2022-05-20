@@ -19,5 +19,9 @@ def delete_resource(id)
 end
 
 def sort_resources(language)
-  run_sql("SELECT * FROM resources WHERE #{language}")
+  if language == ('html') || language == ('css') || language == ('javascript') || language == ('ruby') || language == ('ruby_on_rails') || language == ('postgresql') || language == ('python')
+    run_sql("SELECT * FROM resources WHERE #{language}")
+  else
+    []
+  end
 end

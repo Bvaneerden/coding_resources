@@ -55,6 +55,6 @@ Fun and Easter Eggs
 
 # Step 6
 Known Bugs
-  checked boxes blank when editing
-  reset of carousel when sorting languages
-  background color fills only 100view height
+  checked boxes blank when editing - fixed
+  reset of carousel when sorting languages - fixed
+  background color fills only 100view height - fixed
