@@ -30,3 +30,4 @@ Login fail
 
 Known Bugs
 checked boxes blank when editing
+reset of carousel when sorting languages

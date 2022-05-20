@@ -1,3 +1,5 @@
+require 'pry'
+
 get '/' do
   all_resources = all_resources()
   
@@ -60,16 +62,77 @@ delete '/resource/:id' do
 
   delete_resource(id)
   
-
   redirect '/'
 end
 
-get '/resource/sort' do
-  # languages = ["html"]
+language_index = 0
 
-  # sort_resources(language)
-  erb :'users/not_found'
-  # redirect '/users/not_found'
+get '/resource/sort-html' do
+  language = 'html'
 
+  all_resources = sort_resources(language)
+
+  erb :index, locals: {
+    all_resources: all_resources
+  }
 end
 
+get '/resource/sort-css' do
+  language = 'css'
+
+  all_resources = sort_resources(language)
+
+  erb :index, locals: {
+    all_resources: all_resources
+  }
+end
+
+get '/resource/sort-javascript' do
+  language = 'javascript'
+
+  all_resources = sort_resources(language)
+
+  erb :index, locals: {
+    all_resources: all_resources
+  }
+end
+
+get '/resource/sort-ruby' do
+  language = 'ruby'
+
+  all_resources = sort_resources(language)
+
+  erb :index, locals: {
+    all_resources: all_resources
+  }
+end
+
+get '/resource/sort-ruby_on_rails' do
+  language = 'ruby_on_rails'
+
+  all_resources = sort_resources(language)
+
+  erb :index, locals: {
+    all_resources: all_resources
+  }
+end
+
+get '/resource/sort-postgresql' do
+  language = 'postgresql'
+
+  all_resources = sort_resources(language)
+
+  erb :index, locals: {
+    all_resources: all_resources
+  }
+end
+
+get '/resource/sort-python' do
+  language = 'python'
+
+  all_resources = sort_resources(language)
+
+  erb :index, locals: {
+    all_resources: all_resources
+  }
+end

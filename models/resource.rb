@@ -19,7 +19,7 @@ def delete_resource(id)
 end
 
 def sort_resources(language)
-  run_sql("SELECT * FROM resources WHERE language = $1", [language])
+  run_sql("SELECT * FROM resources WHERE #{language}")
 end
 
 
