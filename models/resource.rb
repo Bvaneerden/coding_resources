@@ -21,6 +21,3 @@ end
 def sort_resources(language)
   run_sql("SELECT * FROM resources WHERE #{language}")
 end
-
-
-# UPDATE resources SET html = true WHERE id = 5;

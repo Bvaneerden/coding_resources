@@ -16,11 +16,6 @@ CREATE TABLE resources (
   python BOOLEAN
 );
 
-
--- Alter TABLE resources ADD COLUMN python BOOLEAN;
--- ;
-
-
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
   name TEXT,
@@ -28,25 +23,12 @@ CREATE TABLE users(
   password_digest TEXT
 );
 
--- likes
--- define foreign key
-CREATE TABLE recommendations(
-  id SERIAL PRIMARY KEY,
-  user_id INTEGER,
-  resources_id INTEGER,
-);
+-- -- likes
+-- -- define foreign key
+-- CREATE TABLE recommendations(
+--   id SERIAL PRIMARY KEY,
+--   user_id INTEGER,
+--   resources_id INTEGER,
+-- );
 
 INSERT INTO resources(name, description, url, html, css, javascript, ruby, ruby_on_rails, postgresql, python) VALUES('Grasshopper', 'Welcome to Grasshopper the coding app for beginners', 'https://grasshopper.app/', 'true', 'true', 'true', 'false', 'false', 'false', 'false'), ('General Assembly', 'Prework for beginners', 'https://generalassemb.ly/', 'true', 'true', 'true', 'false', 'false', 'false', 'false'), ('Speedcoder', 'Practice typing code in Javascript, Ruby and other languages.','http://speedcoder.herokuapp.com/', 'false', 'false', 'true', 'true', 'false', 'false', 'false'), ('MDN', 'Array methods', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array', 'false', 'false', 'true', 'false', 'false', 'false', 'false'), ('MDN', 'Documenting web technologies, including CSS, HTML, and JavaScript, since 2005', 'https://developer.mozilla.org/en-US/', 'true', 'true', 'true', 'false', 'false', 'false', 'false'), ('Flexbox Froggy', 'Game to learn CSS flexbox','https://flexboxfroggy.com/', 'false', 'true', 'false', 'false', 'false', 'false', 'false'), ('Grid Garden', 'Game to learn CSS grid', 'https://cssgridgarden.com/', 'false', 'true', 'false', 'false', 'false', 'false', 'false'), ('CSS-Tricks', 'A Complete Guide to Flexbox', 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/', 'false', 'true', 'false', 'false', 'false', 'false', 'false'), ('CSS-Tricks', 'A Complete Guide to Grid', 'https://css-tricks.com/snippets/css/complete-guide-grid/', 'false', 'true', 'false', 'false', 'false', 'false', 'false'), ('Media queries', 'CSS - media queries', 'https://mediaqueri.es/', 'false', 'false', 'true', 'false', 'false', 'false', 'false'), ('W3schools', 'CSS - media queries', 'https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_mediaquery', 'false', 'true', 'false', 'false', 'false', 'false', 'false'), ('Carousel', 'A slideshow component for cycling through elements—images or slides of text—like a carousel.', 'https://getbootstrap.com/docs/5.1/components/carousel/', 'false', 'true', 'true', 'false', 'false', 'false', 'false'), ('Ruby docs', 'Array methods', 'https://ruby-doc.org/core-2.7.0/Array.html', 'false', 'false', 'false', 'true', 'false', 'false', 'false'), ('Code wars', '', 'https://www.codewars.com/', 'false', 'false', 'true', 'true', 'false', 'true', 'true');
-
--- ('', '', '', 'false', 'false', 'false', 'false', 'false', 'false', 'false')
-
-
-
-DROP TABLE resources;
-
-
-
--- SELECT * FROM resources;
-
-
--- Alter TABLE resources ADD COLUMN ruby BOOLEAN;

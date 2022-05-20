@@ -1,7 +1,7 @@
 <div class="main">
-  <h1>SEI53 Coding Resource App</h1>
+  <h1 >SEI53 Coding Resource App</h1>
   <% if logged_in? %>
-    <h2>You are logged in. Welcome <%= current_user['name'] %> Yoda veloper</h2>
+    <h2>You are logged in. Welcome <%= current_user['name'] %> </h2>
     <div class="actions"></div>
     <div class="carousel_container">
       <div id="carouselExampleControls" class="carousel slide" data-bs-interval="false">
@@ -37,37 +37,33 @@
 
         </div>
            
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-       
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
 
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+       
       </div>
 
-      <%# <div class="other_buttons"> %>
-        <form action="/sessions" method="POST">
-          <input type="hidden" name="_method" value="delete">        
-          <button>BRB</button>
-        </form>
+      <form action="/sessions" method="POST">
+        <input type="hidden" name="_method" value="delete">        
+        <button class="button_styled">BRB</button>
+      </form>
 
-        <a href="/resource/new">Add new resource</a>
-      <%# </div> %>
+      <p><a href="/resource/new" class="button_styled">Add new resource</a></p>
 
     </div>
-
-
 
     <section class="all_resources">
       <% all_resources.each do |resource| %>
         <article class="resource_item">
           <h2><a href="<%="#{resource['url']}"%>" target="_blank"><%= resource['name'] %></a></h2>
           
-          <h3><%="#{resource['description']}"%></h3>
+          <h5><%="#{resource['description']}"%></h5>
 
           <div class="all_lang">
             <% if resource['html'] == 't' %>
@@ -94,12 +90,12 @@
           </div>
           
           <div class="changes">
-            <a href="/resource/<%=resource['id']%>/edit">Edit</a>
+            <a href="/resource/<%=resource['id']%>/edit" class="button_styled">Edit</a>
 
             <form onsubmit="return confirm('Are you sure you want to delete this resource?');" action="/resource/<%= resource['id'] %>" method="POST">
               <input type="hidden" name="_method" value="delete">
 
-              <button>Delete</button>             
+              <button class="button_styled">Delete</button>             
             </form>
           </div>
 

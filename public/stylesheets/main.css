@@ -1,5 +1,8 @@
 body {
-  background-image: linear-gradient(to bottom right, rgb(136, 215, 241), rgb(190, 45, 234));  
+  background-image: linear-gradient(to bottom right, rgb(136, 215, 241), rgb(190, 45, 234));
+  margin-top: 20px;
+
+  height: 100vh;
 }
 
 .page {
@@ -76,6 +79,7 @@ h1 {
 }
 
 .all_lang {
+  align-self: end;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
   gap: 1em;
@@ -83,7 +87,13 @@ h1 {
 }
 
 .resource_item img {
+  align-self: end;
   width: 100%;
+}
+
+.resource_item{
+  border: 3px dotted rgb(80, 134, 223);
+  padding: 15px 10px;
 }
 
 .index_img{
@@ -111,6 +121,7 @@ h1 {
 }
 
 .changes {
+  align-self: end;
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
@@ -137,4 +148,43 @@ h1 {
 
 .d-block {
   max-height: 80px;
+}
+
+.resource_item {
+  display: grid
+}
+
+.small {
+  align-self: center;
+}
+.button_styled {
+  border: 2px solid black;
+  padding: 2px 20px;
+  background-color: rgb(193, 193, 245);
+  text-decoration: none;
+  color: rgb(3, 3, 142);
+  font-size: medium;
+}
+
+.label {
+  font-weight: 700;
+}
+
+.user-page{
+  display: grid;
+  align-items: center;
+  margin-top: 100px;
+
+  width: 300px;
+  height: 300px;
+  background-color: aquamarine;
+
+}
+
+.text_input {
+  border: 9px solid transparent;
+}
+
+a {
+  color: rgb(47, 47, 152)
 }

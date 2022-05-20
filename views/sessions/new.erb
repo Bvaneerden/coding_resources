@@ -1,12 +1,17 @@
-<div class="main">
+<div class="user-page main">
   <h1>Log In</h1>
-  <form action="/sessions" method="POST">
-    <label for="">Email</label>
-    <input type="text" name='email'>
+  
+  <form action="/sessions" method="POST" class="form">
+    <div class="text_input">
+      <label for="">Email</label>
+      <input type="text" name='email'>
+    </div>
 
-    <label for="">Password</label>
-    <input type="password" name="password">
+    <div class="text_input">
+      <label for="">Password</label>
+      <input type="password" name="password">
+    </div>
 
-    <button>Log in</button>
+    <button class="button_styled">Log in</button>
   </form>
 </div>
