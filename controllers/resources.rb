@@ -1,7 +1,7 @@
 require 'pry'
 
 get '/' do
-  language = "html"
+  language = "group"
   all_resources = all_resources()
   
   erb :index, locals: {
