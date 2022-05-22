@@ -1,3 +1,5 @@
+require 'pry'
+
 def all_resources
   run_sql("SELECT * FROM resources ORDER BY id")
 end
@@ -17,6 +19,12 @@ end
 def delete_resource(id)
   run_sql("DELETE FROM resources WHERE id = $1", [id])
 end
+
+# sql injection issues 
+# def sort_resources(language)
+#   binding.pry
+#     run_sql("SELECT * FROM resources WHERE $1", [language])
+# end
 
 def sort_resources(language)
   if language == ('html') || language == ('css') || language == ('javascript') || language == ('ruby') || language == ('ruby_on_rails') || language == ('postgresql') || language == ('python')

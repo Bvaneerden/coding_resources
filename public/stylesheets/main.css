@@ -192,3 +192,11 @@ h1 {
 a {
   color: rgb(47, 47, 152)
 }
+
+.profile_image {
+  max-width: 50px;
+}
+
+.profile {
+  
+}

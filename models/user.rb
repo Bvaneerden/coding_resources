@@ -10,10 +10,18 @@ def find_user_by_email(email)
   if users.to_a.count > 0
     users[0]
   else 
-    redirect '/not_found'
+    nil
   end
 end
 
 def find_user_by_id(id)
   run_sql("SELECT * FROM users WHERE id = $1", [id])[0]
+end
+
+def all_sei53
+  run_sql("SELECT * FROM sei53 ORDER BY id")
+end
+
+def find_user_by_role(id)
+  run_sql("SELECT role FROM users WHERE id = $1", [id])[0]
 end

@@ -1,5 +1,5 @@
 <div class="main">
-  <h1 >SEI53 Coding Resource App</h1>
+  <h1 ><a href="/users/sei53">SEI53</a> Coding Resource App</h1>
   <% if logged_in? %>
     <h2>You are logged in. Welcome <%= current_user['name'] %> </h2>
     <div class="actions"></div>
@@ -88,16 +88,18 @@
               <img class='small' src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" alt="Python Logo">
             <% end %>
           </div>
-          
-          <div class="changes">
-            <a href="/resource/<%=resource['id']%>/edit" class="button_styled">Edit</a>
 
-            <form onsubmit="return confirm('Are you sure you want to delete this resource?');" action="/resource/<%= resource['id'] %>" method="POST">
-              <input type="hidden" name="_method" value="delete">
+          <% if admin_login? %>
+            <div class="changes">
+              <a href="/resource/<%=resource['id']%>/edit" class="button_styled">Edit</a>
 
-              <button class="button_styled">Delete</button>             
-            </form>
-          </div>
+              <form onsubmit="return confirm('Are you sure you want to delete this resource?');" action="/resource/<%= resource['id'] %>" method="POST">
+                <input type="hidden" name="_method" value="delete">
+
+                <button class="button_styled">Delete</button>             
+              </form>
+            </div>
+          <% end %>
 
         </article>
       <% end %>

@@ -33,6 +33,7 @@ Start - create CRUD features
   - create ability to delete resources
   - create ability to update resources
   - create ability to filter resources language
+  - sanatize data to prevent data injection
 
 ## Step 2
   - Deploy to Github
@@ -58,3 +59,4 @@ Known Bugs
   checked boxes blank when editing - fixed
   reset of carousel when sorting languages - fixed
   background color fills only 100view height - fixed
+  data injection issue in sort_resources function - fixed

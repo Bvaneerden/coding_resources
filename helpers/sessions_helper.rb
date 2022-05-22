@@ -1,3 +1,5 @@
+require 'pry'
+
 def logged_in?
   if session['user_id']
     true
@@ -12,4 +14,12 @@ def current_user
   else
     nil
   end
+end
+
+def admin_login?
+  if find_user_by_role(session['user_id'])['role'] == "admin"
+    true    
+  else
+    false
+    end
 end
