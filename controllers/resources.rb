@@ -14,6 +14,12 @@ get '/resource/new' do
   erb :'resource/new'
 end
 
+get '/resource/problem_solving' do
+  erb :'resource/problem_solving'
+end
+
+
+
 post '/resource' do
   name = params['name']
   description = params['description']
