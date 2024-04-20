@@ -3,8 +3,8 @@ services:
     environment:
       DATABASE_URL: postgresql://myuser:mypassword@db/coding_resources
     build: .
-    ports:
-      - "8088:4567"
+    # ports:
+    #   - "8088:4567"
     volumes:
       - .:/app
     depends_on:
@@ -12,13 +12,20 @@ services:
     restart: unless-stopped
   db:
     image: postgres:latest
-    ports:
-      - "5433:5432"
+    # ports:
+    #   - "5433:5432"
     environment:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: coding_resources
     restart: unless-stopped
+  time-full-tunnel:
+    image: cloudflare/cloudflared
+    restart: unless-stopped
+    command: tunnel run
+    environment:
+      TUNNEL_TOKEN: "${CLOUDFLARE_TUNNEL_TOKEN}"
+
 
 # connect to db from command line
 # psql postgresql://myuser:mypassword@localhost:5433/coding_resources

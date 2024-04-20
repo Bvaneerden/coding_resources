@@ -2,10 +2,9 @@ require 'sinatra'
 require 'pry'
 require 'bcrypt'
 require 'pg'
-puts 'meow'
+
 enable :sessions
 
-puts 'meow'
 
 require './db/db'
 
