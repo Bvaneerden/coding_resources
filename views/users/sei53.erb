@@ -1,0 +1,25 @@
+<div class="main">
+  <h1>Team SEI53</h1>
+  <h5>Please feel free to peruse the Teams achievements</h5>
+  <h5> Then share your comments directly by clicking their profile picture</h5>
+  <h5></h5>
+  <div class="all_resources">
+    <% all_sei53.each do |team_member| %>
+      <div class="resource_item">
+        <div class="profile_top">
+          <a href="<%="#{team_member['linkedin']}"%>"><img src="<%="#{team_member['image']}"%>" alt='linkedin' class='profile_image'></a>
+        </div>
+        
+
+        <div class="profile_mid">
+          <h2><a href="<%="#{team_member['github']}"%>" target="_blank"><%= team_member['name'] %></a></h2>
+        </div>
+
+        <div class="profile_bottom">
+          <a href="<%="#{team_member['project1']}"%>">Tic Tac Toe</a>
+          <a href="<%="#{team_member['project2']}"%>">CRUD App</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

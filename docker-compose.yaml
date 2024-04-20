@@ -1,0 +1,24 @@
+services:
+  coding_resources:
+    environment:
+      DATABASE_URL: postgresql://myuser:mypassword@db/coding_resources
+    build: .
+    ports:
+      - "8088:4567"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    restart: unless-stopped
+  db:
+    image: postgres:latest
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: coding_resources
+    restart: unless-stopped
+
+# connect to db from command line
+# psql postgresql://myuser:mypassword@localhost:5433/coding_resources

@@ -1,0 +1,158 @@
+<div class="main">
+  <h1 ><a href="/users/sei53">SEI53</a> Coding Resource App</h1>
+  <% if logged_in? %>
+    <h2>You are logged in. Welcome <%= current_user['name'] %> </h2>
+    <div class="actions"></div>
+    <div class="carousel_container">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item <%= language == 'html' ? ' active' : '' %>">
+            <a href="/resource/sort/html"><img src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" class="d-block" alt="HTML5 Logo"></a>
+          </div>
+
+          <div class="carousel-item <%= language == 'css' ? ' active' : '' %>">
+            <a href="/resource/sort/css"><img src="https://png.pngitem.com/pimgs/s/198-1985002_css3-logo-hd-png-download.png" class="d-block" alt="CSS Logo"></a>
+          </div>
+          
+          <div class="carousel-item <%= language == 'javascript' ? ' active' : '' %>">
+            <a href="/resource/sort/javascript"><img src="https://png.pngitem.com/pimgs/s/116-1167737_logo-javascript-pattern-copyright-framework-free-download-javascript.png" class="d-block" alt="JS Logo"></a>
+          </div>
+
+          <div class="carousel-item  <%= language == 'ruby' ? ' active' : '' %>">
+            <a href="/resource/sort/ruby"><img src="https://png.pngitem.com/pimgs/s/12-120179_best-free-ruby-png-ruby-programming-language-logo.png" class="d-block" alt="Ruby Logo"></a>
+          </div>
+
+          <div class="carousel-item <%= language == 'ruby_on_rails' ? ' active' : '' %>">
+            <a href="/resource/sort/ruby_on_rails"><img src="https://png.pngitem.com/pimgs/s/360-3600482_ruby-on-rails-logo-ruby-on-rails-logo.png" class="d-block" alt="Ruby on Rails Logo"></a>
+          </div>
+
+          <div class="carousel-item <%= language == 'postgresql' ? ' active' : '' %>">
+            <a href="/resource/sort/postgresql"><img src="https://png.pngitem.com/pimgs/s/151-1512647_postgresql-elephant-logo-postgresql-logo-vector-hd-png.png" class="d-block" alt="Postgresql Logo"></a>
+          </div>
+
+          <div class="carousel-item <%= language == 'python' ? ' active' : '' %>">
+            <a href="/resource/sort/python"><img src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" class="d-block" alt="Python Logo"></a>
+          </div>
+
+          <div class="carousel-item <%= language == 'group' ? ' active' : '' %>">
+            <img src='images/melbourne_sei53.jpg' class="d-block" alt="Melbourne SEI53">
+          </div>
+
+
+        </div>
+           
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+       
+      </div>
+
+      <form action="/sessions" method="POST">
+        <input type="hidden" name="_method" value="delete">        
+        <button class="button_styled">BRB</button>
+      </form>
+
+      <div>
+        <p><a href="/resource/new" class="button_styled">Add new resource</a></p>
+        <p><a href="/resource/problem_solving" class="button_styled">Problem Solving Tricks</a></p>
+      </div>
+
+    </div>
+
+    <section class="all_resources">
+      <% all_resources.each do |resource| %>
+        <article class="resource_item">
+          <h2><a href="<%="#{resource['url']}"%>" target="_blank"><%= resource['name'] %></a></h2>
+          
+          <h5><%="#{resource['description']}"%></h5>
+
+          <div class="all_lang">
+            <% if resource['html'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" alt="HTML5 Logo">       
+            <% end %>
+            <% if resource['css'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/198-1985002_css3-logo-hd-png-download.png" alt="CSS Logo">
+            <% end %>
+            <% if resource['javascript'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/116-1167737_logo-javascript-pattern-copyright-framework-free-download-javascript.png" alt="JS Logo">
+            <% end %>
+            <% if resource['ruby'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/12-120179_best-free-ruby-png-ruby-programming-language-logo.png" alt="Ruby Logo">
+            <% end %>
+            <% if resource['ruby_on_rails'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/360-3600482_ruby-on-rails-logo-ruby-on-rails-logo.png" alt="Ruby on Rails Logo">
+            <% end %>
+            <% if resource['postgresql'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/151-1512647_postgresql-elephant-logo-postgresql-logo-vector-hd-png.png" alt="Postgresql Logo">
+            <% end %>
+            <% if resource['python'] == 't' %>
+              <img class='small' src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" alt="Python Logo">
+            <% end %>
+          </div>
+
+          <% if admin_login? %>
+            <div class="changes">
+              <a href="/resource/<%=resource['id']%>/edit" class="button_styled">Edit</a>
+
+              <form onsubmit="return confirm('Are you sure you want to delete this resource?');" action="/resource/<%= resource['id'] %>" method="POST">
+                <input type="hidden" name="_method" value="delete">
+
+                <button class="button_styled">Delete</button>             
+              </form>
+            </div>
+          <% end %>
+
+        </article>
+      <% end %>
+    </section>
+
+  <% else %>
+    <div class="page">
+      <h1>Please <a href="/login">Login</a> or <a href="/sign_up">Sign Up</a></h1>
+      
+      <h1 ><a href="/users/sei53">Click here</a> to meet the team</h1>
+        
+      <div class="index_img">
+
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/552-5526152_ornate-html5-logo-html-5-hd-png-download.png" alt="HTML5 Logo" id="img1"> 
+        </div>
+
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/198-1985002_css3-logo-hd-png-download.png" alt="CSS Logo" id="img2">
+        </div>
+        
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/116-1167737_logo-javascript-pattern-copyright-framework-free-download-javascript.png" alt="JS Logo" id="img3">
+        </div>
+        
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/12-120179_best-free-ruby-png-ruby-programming-language-logo.png" alt="Ruby Logo" id="img4">
+        </div>
+        
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/360-3600482_ruby-on-rails-logo-ruby-on-rails-logo.png" alt="Ruby on RailsLogo" id="img5">
+        </div>
+        
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/151-1512647_postgresql-elephant-logo-postgresql-logo-vector-hd-png.png" alt="Postgresql Logo" id="img6">
+        </div>
+        
+        <div class="ind_img">
+          <img src="https://png.pngitem.com/pimgs/s/159-1595932_python-logo-png-transparent-images-logo-transparent-background.png" alt="Python Logo" id="img7">
+        </div>
+            
+      </div>
+
+    </div>
+  <% end %>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
